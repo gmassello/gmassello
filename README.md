@@ -18,8 +18,10 @@ Coverage measured, not assumed: the six capture sites split across two mutually 
 
 - **[hindsight](https://github.com/gmassello/hindsight)** — On-call agent for data incidents: walks DataHub lineage to rank blast radius and root cause, writes the diagnosis back into the catalog, and remembers — the next incident starts where this one ended.
 - **[recall](https://github.com/gmassello/recall)** — On-call copilot with semantic incident memory: an AI agent whose memory is CockroachDB (distributed vector search + Cloud Managed MCP Server), deployed on AWS Lambda.
+- **[ringdown](https://github.com/gmassello/ringdown)** — An on-call escalation agent that phones the pager holder — and proves the acknowledgement happened. "Notification sent" proves nothing: a commitment has an owner and a clock.
 - **[adlc](https://github.com/gmassello/adlc)** — Pipeline agéntico para banca digital regulada.
-- **[aiquest-minitel-client](https://github.com/gmassello/aiquest-minitel-client)** — MiniTel-Lite client for the JOSHUA infiltration challenge.
+- **[web-scraper-toolkit](https://github.com/gmassello/web-scraper-toolkit)** — Point it at a URL, say what you want off the page, get back a table. Rate-limit aware, respects `robots.txt`. On PyPI as `scrape-toolkit`.
+- **[iris](https://github.com/gmassello/iris)** — Receipt photo to structured JSON, with four interchangeable OCR engines behind one API and a reproducible benchmark on a public dataset.
 
 ### Stack
 
