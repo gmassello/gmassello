@@ -1,8 +1,8 @@
 ## Germán Massello
 
-Building AI agents for on-call and data incidents. Python, MCP, LLM tooling.
+Full-stack developer — Córdoba, Argentina. At Globant since 2013; today SDET and AI CLI tooling.
 
-<!-- completar: rol actual, empresa, años de experiencia -->
+Most of my work happens inside systems that already exist and can't stop working: **integrations** (REST, SSE streaming, MCP as a production data path with graceful fallback) and **migrations** — Bitrise → GitHub Actions, Java 8 → 11, Appium 2 → 3.5, an AWS Device Farm account move, database and file-server migrations. That habit is roughly why the contribution below reads the way it does: the interesting part was never the patch.
 
 ### Open source
 
@@ -25,4 +25,10 @@ Coverage measured, not assumed: the six capture sites split across two mutually 
 
 ### Stack
 
-Python · TypeScript · Rust · MCP · LLM agents
+**Languages** — Python · TypeScript · Java · Rust · Ruby
+**Frontend** — React 18 · MUI · Vite
+**Backend** — Node/Express · Spring · FastAPI · REST · SSE streaming · JWT
+**Data** — MongoDB · PostgreSQL · CockroachDB (vector indexes, semantic memory) · SQLite
+**Platform** — AWS (EKS, Lambda, SAM, RDS, S3, CloudFront) · Terraform · Backstage · GitHub Actions (OIDC keyless deploys)
+**AI** — LLM agents with tool use · RAG over vector search · multi-agent pipelines with human-in-the-loop gates · MCP
+**Testing** — Appium · Rest Assured · TestNG · TestCafe · Selenium
