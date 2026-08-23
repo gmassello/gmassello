@@ -1,34 +1,75 @@
-## Germán Massello
+<h1 align="center">Germán Massello</h1>
 
-Full-stack developer — Córdoba, Argentina. At Globant since 2013; today SDET and AI CLI tooling.
+<p align="center">
+  <b>Full-stack developer working inside systems that already exist and can't stop working.</b><br>
+  SDET and AI CLI tooling at Globant · Córdoba, Argentina · since 2013
+</p>
 
-Most of my work happens inside systems that already exist and can't stop working: **integrations** (REST, SSE streaming, MCP as a production data path with graceful fallback) and **migrations** — Bitrise → GitHub Actions, Java 8 → 11, Appium 2 → 3.5, an AWS Device Farm account move, database and file-server migrations. That habit is roughly why the contribution below reads the way it does: the interesting part was never the patch.
+<p align="center">
+  <a href="https://dev.to/gmassello"><b>Blog</b></a> ·
+  <a href="https://github.com/getsentry/sentry-python/pull/7226"><b>Sentry PR #7226</b></a> ·
+  <a href="https://gmassello.github.io/hindsight/"><b>hindsight demo</b></a>
+</p>
 
-### Open source
+<p align="center">
+  <img alt="focus: SDET + AI tooling" src="https://img.shields.io/badge/focus-SDET_%2B_AI_tooling-0A0A0A">
+  <img alt="python" src="https://img.shields.io/badge/python-agents_·_FastAPI-3776AB?logo=python&logoColor=white">
+  <img alt="rust" src="https://img.shields.io/badge/rust-CLIs-B7410E?logo=rust&logoColor=white">
+  <img alt="typescript" src="https://img.shields.io/badge/typescript-React_18-3178C6?logo=typescript&logoColor=white">
+  <img alt="aws" src="https://img.shields.io/badge/aws-EKS_·_Lambda_·_SAM-232F3E?logo=amazonwebservices&logoColor=white">
+  <a href="https://pypi.org/project/scrape-toolkit/"><img alt="pypi scrape-toolkit" src="https://img.shields.io/badge/pypi-scrape--toolkit-006DAD?logo=pypi&logoColor=white"></a>
+</p>
 
-**[getsentry/sentry-python#7226](https://github.com/getsentry/sentry-python/pull/7226)** — `fix(mcp,langchain): Add mechanism to captured exceptions`
+---
 
-The issue said the exception `mechanism` was missing from MCP and LangChain events. It wasn't missing — it was wrong, in two separate ways. `type: "generic"` left the errors unattributed, which is what the issue describes. `handled: True` was the part nobody reported: all six MCP capture sites re-raise, so the exception reaches user code, yet Sentry counted these as handled — keeping them out of the crash-free rate and out of unhandled-issue alerts.
+## What I work on
 
-Coverage measured, not assumed: the six capture sites split across two mutually exclusive code paths (`mcp` v1 patches decorators, v2 installs middleware), so both versions are needed to reach all of them. Along the way: a LangChain error path (`on_tool_error`) with no test at all, and a regression I introduced myself — my helper dropped a `capture_internal_exceptions()` safety net the original code had, which inside `except ... raise` would have replaced the user's exception with the SDK's own.
+Two kinds of work, mostly. **Integrations** — REST, SSE streaming, MCP as a production data path with graceful fallback. And **migrations**: Bitrise → GitHub Actions, Java 8 → 11, Appium 2 → 3.5, an AWS Device Farm account move, database and file-server moves. Both share a constraint: nothing is allowed to stop working while you change it.
 
-[Full write-up →](https://dev.to/gmassello/the-bug-report-was-wrong-and-that-was-the-interesting-part-328h)
+Lately that habit points at agents. Not chat wrappers — on-call tooling that walks real lineage, keeps memory between incidents, and can say *no precedent* instead of inventing a root cause. Contributed upstream in [getsentry/sentry-python#7226](https://github.com/getsentry/sentry-python/pull/7226), open and awaiting review, where the reported bug turned out to be the smaller of the two ([write-up](https://dev.to/gmassello/the-bug-report-was-wrong-and-that-was-the-interesting-part-328h)).
 
-### Projects
+## Featured work
 
-- **[hindsight](https://github.com/gmassello/hindsight)** ([live demo](https://gmassello.github.io/hindsight/)) — On-call agent for data incidents: walks DataHub lineage to rank blast radius and root cause, writes the diagnosis back into the catalog, and remembers — the next incident starts where this one ended.
-- **[recall](https://github.com/gmassello/recall)** ([live](https://d2n13wfb8jv9v.cloudfront.net)) — On-call copilot with semantic incident memory: an AI agent whose memory is CockroachDB (distributed vector search + Cloud Managed MCP Server), deployed on AWS Lambda.
-- **[ringdown](https://github.com/gmassello/ringdown)** — An on-call escalation agent that phones the pager holder — and proves the acknowledgement happened. "Notification sent" proves nothing: a commitment has an owner and a clock.
-- **[adlc](https://github.com/gmassello/adlc)** — Pipeline agéntico para banca digital regulada.
-- **[web-scraper-toolkit](https://github.com/gmassello/web-scraper-toolkit)** — Point it at a URL, say what you want off the page, get back a table. Rate-limit aware, respects `robots.txt`. On PyPI as [`scrape-toolkit`](https://pypi.org/project/scrape-toolkit/).
-- **[iris](https://github.com/gmassello/iris)** — Receipt photo to structured JSON, with four interchangeable OCR engines behind one API and a reproducible benchmark on a public dataset.
+**[hindsight](https://github.com/gmassello/hindsight)** · [live demo](https://gmassello.github.io/hindsight/)<br>
+On-call agent for data incidents. Walks DataHub lineage to rank blast radius and root cause, writes the diagnosis back into the catalog, and remembers — the next incident starts where this one ended.
 
-### Stack
+**[recall](https://github.com/gmassello/recall)** · [live](https://d2n13wfb8jv9v.cloudfront.net)<br>
+On-call copilot with semantic incident memory. Its memory *is* CockroachDB — distributed vector search plus a Cloud Managed MCP Server — deployed on AWS Lambda.
 
-**Languages** — Python · TypeScript · Java · Rust · Ruby
-**Frontend** — React 18 · MUI · Vite
-**Backend** — Node/Express · Spring · FastAPI · REST · SSE streaming · JWT
-**Data** — MongoDB · PostgreSQL · CockroachDB (vector indexes, semantic memory) · SQLite
-**Platform** — AWS (EKS, Lambda, SAM, RDS, S3, CloudFront) · Terraform · Backstage · GitHub Actions (OIDC keyless deploys)
-**AI** — LLM agents with tool use · RAG over vector search · multi-agent pipelines with human-in-the-loop gates · MCP
+**[ringdown](https://github.com/gmassello/ringdown)**<br>
+An escalation agent that phones the pager holder and proves the acknowledgement happened. "Notification sent" proves nothing: a commitment has an owner and a clock.
+
+## Also on the shelf
+
+- **[dfh](https://github.com/gmassello/dfh)** — Rust CLI for AWS Device Farm: upload apps, run tests on real devices, pull artifacts, all from the terminal.
+- **[mobile-inspector-cli](https://github.com/gmassello/mobile-inspector-cli)** — Inspect an Android or iOS view hierarchy without opening Appium Inspector. Pipe-friendly, regex and XPath filters, REPL.
+- **[web-scraper-toolkit](https://github.com/gmassello/web-scraper-toolkit)** — Point it at a URL, say what you want off the page, get a table. Rate-limit aware, respects robots.txt. On PyPI as [`scrape-toolkit`](https://pypi.org/project/scrape-toolkit/).
+- **[iris](https://github.com/gmassello/iris)** — Receipt photo to structured JSON: four interchangeable OCR engines behind one API, benchmarked on a public dataset with ground truth.
+- **[adlc](https://github.com/gmassello/adlc)** — Pipeline agéntico para banca digital regulada (Hackathon IA 2026).
+
+## Stack
+
+**Languages** — Python · TypeScript · Java · Rust · Ruby<br>
+**Frontend** — React 18 · MUI · Vite<br>
+**Backend** — Node/Express · Spring · FastAPI · REST · SSE streaming · JWT<br>
+**Data** — PostgreSQL · MongoDB · CockroachDB (vector indexes) · SQLite<br>
+**Platform** — AWS (EKS, Lambda, SAM, RDS, S3, CloudFront) · Terraform · Backstage · GitHub Actions (OIDC keyless deploys)<br>
+**AI** — LLM agents with tool use · RAG over vector search · multi-agent pipelines with human-in-the-loop gates · MCP<br>
 **Testing** — Appium · Rest Assured · TestNG · TestCafe · Selenium
+
+## Español
+
+<details>
+<summary>Misma página, en castellano</summary>
+
+Desarrollador full-stack en Córdoba, Argentina. En Globant desde 2013; hoy SDET y herramientas CLI con IA. Trabajo casi siempre dentro de sistemas que ya existen y no pueden dejar de funcionar: **integraciones** (REST, SSE, MCP como camino de datos productivo con fallback) y **migraciones** — Bitrise → GitHub Actions, Java 8 → 11, Appium 2 → 3.5, mudanza de cuenta de AWS Device Farm, bases y file servers.
+
+De ahí salen los proyectos de arriba: agentes de guardia que recorren linaje real, guardan memoria entre incidentes y saben decir *no hay precedente* antes de inventar una causa raíz. Contribución abierta en [getsentry/sentry-python#7226](https://github.com/getsentry/sentry-python/pull/7226).
+
+</details>
+
+---
+
+<p align="center">
+  <sub>Córdoba, Argentina · abierto a charlas sobre agentes, tooling y migraciones que no se pueden caer</sub>
+</p>
