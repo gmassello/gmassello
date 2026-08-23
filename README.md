@@ -12,7 +12,7 @@ The issue said the exception `mechanism` was missing from MCP and LangChain even
 
 Coverage measured, not assumed: the six capture sites split across two mutually exclusive code paths (`mcp` v1 patches decorators, v2 installs middleware), so both versions are needed to reach all of them. Along the way: a LangChain error path (`on_tool_error`) with no test at all, and a regression I introduced myself — my helper dropped a `capture_internal_exceptions()` safety net the original code had, which inside `except ... raise` would have replaced the user's exception with the SDK's own.
 
-[Full write-up →](https://dev.to/germn_massello_791153503/the-bug-report-was-wrong-and-that-was-the-interesting-part-328h)
+[Full write-up →](https://dev.to/gmassello/the-bug-report-was-wrong-and-that-was-the-interesting-part-328h)
 
 ### Projects
 
