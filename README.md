@@ -30,13 +30,13 @@ Lately that habit points at agents. Not chat wrappers — on-call tooling that w
 
 ## Featured work
 
-**[hindsight](https://github.com/gmassello/hindsight)** · [live demo](https://gmassello.github.io/hindsight/)<br>
+**[hindsight](https://github.com/gmassello/hindsight)** · [live demo](https://gmassello.github.io/hindsight/) · [video (2:33)](https://youtu.be/y04gl1faens)<br>
 On-call agent for data incidents. Walks DataHub lineage to rank blast radius and root cause, writes the diagnosis back into the catalog, and remembers — the next incident starts where this one ended.
 
-**[recall](https://github.com/gmassello/recall)** · [live](https://d2n13wfb8jv9v.cloudfront.net)<br>
+**[recall](https://github.com/gmassello/recall)** · [live](https://d2n13wfb8jv9v.cloudfront.net) · [video (2:57)](https://youtu.be/L3CkZax88dU)<br>
 On-call copilot with semantic incident memory. Its memory *is* CockroachDB — distributed vector search plus a Cloud Managed MCP Server — deployed on AWS Lambda.
 
-**[ringdown](https://github.com/gmassello/ringdown)**<br>
+**[ringdown](https://github.com/gmassello/ringdown)** · [video (2:50)](https://youtu.be/WIYBWFslix4)<br>
 An escalation agent that phones the pager holder and proves the acknowledgement happened. "Notification sent" proves nothing: a commitment has an owner and a clock.
 
 ## Also on the shelf
