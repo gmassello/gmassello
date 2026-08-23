@@ -8,7 +8,8 @@
 <p align="center">
   <a href="https://dev.to/gmassello"><b>Blog</b></a> ·
   <a href="https://github.com/getsentry/sentry-python/pull/7226"><b>Sentry PR #7226</b></a> ·
-  <a href="https://gmassello.github.io/hindsight/"><b>hindsight demo</b></a>
+  <a href="https://gmassello.github.io/hindsight/"><b>hindsight demo</b></a> ·
+  <a href="https://www.youtube.com/@gmassello"><b>Demo videos</b></a>
 </p>
 
 <p align="center">
